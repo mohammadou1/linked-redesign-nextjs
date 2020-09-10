@@ -1,0 +1,119 @@
+@tailwind base;
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+:root {
+   --body-bg: #e5e5e5;
+   --footer-bg: #f7f9fb;
+}
+
+body {
+   background-color: var(--body-bg);
+   font-family: 'Gotham', Arial, sans-serif;
+   font-weight: 500;
+}
+
+#__next {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   main {
+      flex: 1;
+      background-color: var(--body-bg);
+   }
+}
+
+.body-bg{
+   background-color:var(--body-bg);
+}
+
+/* Navlinks */
+.nav-link {
+   @apply font-bold sm:px-6 px-3 h-auto flex hover:bg-gray-200 text-sm relative;
+
+   &.active {
+      @apply text-primary;
+      path {
+         stroke: theme('colors.primary');
+      }
+   }
+   &__item {
+      @apply flex flex-col justify-center items-center;
+   }
+}
+
+.count-badge {
+   @apply absolute leading-none text-white w-4 h-4 flex items-center justify-center text-xs p-2 rounded-full;
+   background: linear-gradient(
+      215.49deg,
+      theme('colors.orange.400') 5.4%,
+      theme('colors.orange.600') 93.45%
+   );
+   top: -5px;
+   right: -7px;
+}
+
+/* Searchbar */
+.search-icon {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   left: 0.75rem;
+}
+.searchbar {
+   @apply border-r border-l border-gray-300 h-full focus:outline-none focus:border-primary pl-12 pr-2;
+   width: 24rem;
+   &::placeholder {
+      font-weight: 500;
+   }
+   &-full {
+      @apply w-full;
+   }
+}
+
+.header .username {
+   max-width: 100px;
+   display: inline-block;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+.header__burger-icon {
+   @apply bg-white shadow-sm absolute rounded-full flex items-center justify-center;
+   padding: 0.3rem;
+   right: 0;
+   bottom: -6px;
+   img {
+      @apply sm:w-3 sm:h-3 w-2 h-2;
+   }
+}
+
+/* Footer */
+.footer {
+   @apply px-4 xl:px-24 lg:px-20 sm:px-12 py-10;
+   background-color: var(--footer-bg);
+}
+
+
+/* draft-js */
+
+div.DraftEditor-root{
+   @apply py-4 break-words;
+   word-break:break-all;
+}
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+   .nav-link .link-title {
+      @apply hidden;
+   }
+   .searchbar {
+      width: 18rem;
+   }
+}

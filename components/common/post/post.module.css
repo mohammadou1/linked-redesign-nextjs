@@ -1,0 +1,16 @@
+.content {
+   overflow: hidden;
+   max-height: 150px;
+   position: relative;
+   @screen lg {
+      max-height: 100px;
+   }
+   &__lay {
+      position: absolute;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55px;
+   }
+}
